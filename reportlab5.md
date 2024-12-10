@@ -1,4 +1,4 @@
-# PKI Script Report
+# PKI Automation Script
 
 ## Author:
 **Lupan Ovidiu**  
@@ -6,63 +6,33 @@ FAF-223
 
 ---
 
-## Project Overview:
-This project implements a Public Key Infrastructure (PKI) system using OpenSSL. It covers the steps of generating root and user certificates, signing and verifying files, and handling certificate revocation. The PKI structure is created and managed through Python scripts.
+## Overview
+This project automates the process of setting up a Public Key Infrastructure (PKI) using Python and OpenSSL. It includes the generation of a root Certificate Authority (CA), user certificates, signing and verifying files, and revoking certificates. The script is designed to simplify the creation of a secure certificate-based system.
 
 ---
 
-## Table of Contents:
-- [Introduction](#introduction)
-- [PKI Setup](#pki-setup)
-- [Key Features](#key-features)
-- [Usage](#usage)
-- [Installation](#installation)
-- [Commands Overview](#commands-overview)
-- [Script Workflow](#script-workflow)
-- [Conclusion](#conclusion)
+## Components:
+The following components are implemented in the PKI script:
+
+1. **Root CA**: A self-signed certificate authority used to issue other certificates.
+2. **User Certificate**: A certificate issued by the Root CA to identify the user.
+3. **Private Keys**: Secure keys used for signing and verifying certificates and files.
+4. **CRL (Certificate Revocation List)**: A list of revoked certificates.
+5. **Signed Files**: Files that are signed using a private key to verify authenticity.
 
 ---
 
-## Introduction:
-This Python-based PKI script automates the creation of a Certificate Authority (CA), user certificates, file signing, and certificate revocation using OpenSSL. The script performs the following operations:
-- Set up a CA directory structure.
-- Generate a Root CA certificate and private key.
-- Generate user keys, Certificate Signing Requests (CSR), and certificates.
-- Sign files with user keys and verify signatures.
-- Revoke user certificates and generate a Certificate Revocation List (CRL).
-
----
-
-## PKI Setup:
-The script sets up the following directory structure for the PKI system:
-
-
-### Main Components:
-- **Root CA Certificate**: A self-signed certificate used to sign other certificates.
-- **User Certificate**: A certificate issued by the Root CA for the user.
-- **Private Keys**: Secure keys for the Root CA and User to sign and verify certificates.
-- **Certificate Revocation List (CRL)**: A list of revoked certificates.
-
----
-
-## Key Features:
-- **Automated Setup**: The script sets up directories, generates private keys, CSRs, and certificates automatically.
-- **Signing & Verification**: It provides functionality to sign a file with the user’s private key and verify the signature.
-- **Certificate Revocation**: It includes functionality to revoke user certificates and generate a CRL.
-- **OpenSSL Integration**: Utilizes OpenSSL commands for cryptographic operations.
+## Features:
+- **Automated Certificate Generation**: Generates root and user certificates without requiring manual intervention.
+- **File Signing & Verification**: Signs files with private keys and verifies them with corresponding public keys.
+- **Certificate Revocation**: Supports revocation of certificates and updating the Certificate Revocation List (CRL).
+- **OpenSSL Integration**: Uses OpenSSL commands to perform cryptographic operations like key generation, signing, and verification.
 
 ---
 
 ## Usage:
-The PKI script performs the following operations:
-1. **Set up the CA directory**.
-2. **Generate the Root CA's private key and self-signed certificate**.
-3. **Generate user private key, CSR, and user certificate**.
-4. **Sign a file with the user's private key**.
-5. **Verify the signature of a file**.
-6. **Revoke the user's certificate and generate a CRL**.
-
 ### Running the Script:
-To execute the script, run the following command in the terminal:
+To run the script, use the following command:
+
 ```bash
 python mainlab5.py
